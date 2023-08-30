@@ -1,24 +1,28 @@
-<!-- {% extends 'products/base.html' %}
-{% block content %} -->
+{% extends 'products/base.html' %}
+{% block content %}
 <table border="2">
     <th>ID</th>
     <th>Название</th>
     <th>Описание</th>
     <th>URL</th>
-    {% for category in categories %}
+    {% for cat in categories %}
     <tr>
         <td align="center" >{{category.id}}</td>
         <td align="center">{{category.name}}</td>
         <td align="center">{{category.description}}</td>
         <td align="center">{{category.slug}}</td>
      </tr>
+        {% for subcategory in cat.category.all %}
+            <p>{{ subcategory.name}}</p>
+            <p>{{ subcategory.slug}}</p>
+        {% endfor %}
     {% endfor %}
+    
 </table>
 
 {% for subcat in subcategories %}
 <p>{{subcat.name}}</p>
 <p>{{subcat.slug}}</p>
-{% endor %}
-{{subcategories}}
+{% endfor %}
 
 {% endblock %}
