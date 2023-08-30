@@ -23,7 +23,7 @@ from orders import urls as urls_orders
 from products.views import root_index
 
 urlpatterns = [
-    path('', root_index, name='root_index'),
+    path('', root_index, name='index'),
     path('admin/', admin.site.urls),
     path('products/', include(urls_products)),
     path('users/', include(urls_users)),
