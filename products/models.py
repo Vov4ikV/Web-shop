@@ -2,9 +2,11 @@ from django.db import models
 from django.urls import reverse
 # from django.utils.text import slugify
 from slugify import slugify
+import os
 
-def create_directory_path(instance, filename):
-    return f'images/{instance.category.slug}/{instance.subcategory.slug}'
+def create_directory_path(instance):
+    return os.path.joim('images', instance.category.slug, instance.subcategory.slug)
+    # return f'images/{instance.category.slug}/{instance.subcategory.slug}' тоже самое что и строчкой выше
 
 class Category(models.Model):
     name = models.CharField(max_length=50, verbose_name='Имя категории', unique=True)
@@ -60,6 +62,7 @@ class Products(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', editable=False, related_name='category')
     image = models.ImageField(upload_to=create_directory_path, verbose_name='Изображение товара', null=True, blank=True)
     
+
     class Meta:
        verbose_name = 'Товар'
        verbose_name_plural = 'Товары'
@@ -69,7 +72,8 @@ class Products(models.Model):
     def get_absolute_url(self):  # Используется для получения URL возвращает страничку
         return reverse('products:product-detail', kwargs={
             'cat_slug': self.category.slug, 
-            'subcat_slug':self.slug, 'prod_slug': self.slug
+            'subcat_slug':self.slug, 
+            'prod_slug': self.slug
             }
         ) 
     
