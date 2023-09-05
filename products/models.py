@@ -25,6 +25,9 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
+    
+    def get_url(self):
+        return reverse('category_detail', args=[self.slug])
 
 
 

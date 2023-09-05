@@ -4,7 +4,7 @@
   margin: 50px 0 5px;
   padding: 25px 0 5px;
   text-align: center;
-  background: #c2c1f7;
+  background: #f0ed44;
 }
 .left-links{
   flex:1 1 200px;
@@ -31,7 +31,7 @@
   display: inline-block;
   transition: color .2s;
 }
-.menu-main a, .menu-main a:visited {color: #ecb41cf5;}
+.menu-main a, .menu-main a:visited {color: #20201ff5;}
 .menu-main a.current, .menu-main a:hover{color: #f30531;}
 .menu-main a:before,
 .menu-main a:after {
