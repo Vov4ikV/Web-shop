@@ -4,9 +4,11 @@
   margin: 50px 0 5px;
   padding: 25px 0 5px;
   text-align: center;
-  background: #acbff2;
+  background: #c2c1f7;
 }
-
+.left-links{
+  flex:1 1 200px;
+}
 .menu-main li {display: inline-block;}
 .menu-main li:after {
   content: "|";
@@ -14,7 +16,9 @@
   display: inline-block;
   vertical-align:top;
 }
+
 .menu-main li:last-child:after {content: none;}
+
 .menu-main a {
   text-decoration: none;
   font-family: 'Ubuntu Condensed', sans-serif;
@@ -22,12 +26,12 @@
   position: relative;
   padding-bottom: 20px;
   margin: 0 34px 0 30px;
-  font-size: 17px;
+  font-size: 30px;
   text-transform: uppercase;
   display: inline-block;
   transition: color .2s;
 }
-.menu-main a, .menu-main a:visited {color: #ece51cf5;}
+.menu-main a, .menu-main a:visited {color: #ecb41cf5;}
 .menu-main a.current, .menu-main a:hover{color: #f30531;}
 .menu-main a:before,
 .menu-main a:after {
@@ -38,8 +42,8 @@
   right: 50%;
   bottom: -5px;
   left: 50%;
-  background: #feb386;
-  transition: .8s;
+  background: #f39459;
+  transition: .5s;
 }
 .menu-main a:hover:before, .menu-main .current:before {left: 0;}
 .menu-main a:hover:after, .menu-main .current:after {right: 0;}   
@@ -52,4 +56,3 @@
   margin: 0 30px;
 }
 }
-

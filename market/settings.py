@@ -38,13 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'market',
     'products',
     'users',
     'orders',
     'cart',
     'slugify',
-
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'products.views.get_category',
+                
             ],
         },
     },
@@ -135,3 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'products:index'
 LOGIN_URL = 'users:login'
+
+# Base url to serve media files 
+MEDIA_URL = '/media/' 
+
+# Path where media is stored 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
